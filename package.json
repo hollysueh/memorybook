@@ -8,7 +8,7 @@
     "test": "mocha",
     "frontend-install": "npm install --prefix memorybook-client",
     "frontend": "npm start --prefix memorybook-client",
-    "dev": "concurrently \"npm run memorybook-server\" \"npm run memorybook-client\"",
+    "dev": "concurrently \"npm run memoryBook-server\" \"npm run memorybook-client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix memorybook-client && npm run build --prefix memorybook-client"
   },
   "dependencies": {
