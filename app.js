@@ -27,8 +27,8 @@ app.use(
     directives: {
       defaultSrc: ["'self'", "'unsafe-inline'"],
       scriptSrc: ["'self'", "'unsafe-inline'"],
-      imgSrc: ["self", "'unsafe-inline'"],
-      objectSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["'self'", "unsafe-inline"],
+      objectSrc: ["'none'"],
       upgradeInsecureRequests: [],
     },
   })
