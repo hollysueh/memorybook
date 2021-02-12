@@ -35,6 +35,8 @@ app.use(
 );
 
 // Require routing rules
+require('./routes/index.js')(app);
+require('./routes/users.js')(app);
 require('./routes/newUser.js')(app);
 require('./routes/login.js')(app);
 require('./routes/authorize.js')(app);
