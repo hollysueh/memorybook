@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="App"
+>
+  <h3
+    className="pageHeading"
+  >
+    Create a new Account
+  </h3>
+  <link
+    crossOrigin="anonymous"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    rel="stylesheet"
+  />
+  <form
+    className="accountForm"
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        className="formLabel form-label"
+      >
+        Username:
+      </label>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="username"
+        type="text"
+      />
+      <br />
+      <label
+        className="formLabel form-label"
+      >
+        Email:
+      </label>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="email"
+        type="text"
+      />
+      <br />
+      <label
+        className="formLabel form-label"
+      >
+        Password:
+      </label>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="password"
+        type="password"
+      />
+      <br />
+    </div>
+    <br />
+    <button
+      className="accountButton"
+      onClick={[Function]}
+      type="login"
+      variant="primary"
+    >
+      Create Account
+    </button>
+  </form>
+  <br />
+  <p>
+    Already have an account? 
+    <a
+      href="/Login"
+    >
+      Login here.
+    </a>
+  </p>
+</div>
+`;
+
+exports[`renders states correctly when populated 1`] = `
+<div
+  className="App"
+>
+  <h3
+    className="pageHeading"
+  >
+    Create a new Account
+  </h3>
+  <link
+    crossOrigin="anonymous"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    rel="stylesheet"
+  />
+  <form
+    className="accountForm"
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        className="formLabel form-label"
+      >
+        Username:
+      </label>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="username"
+        type="text"
+      />
+      <br />
+      <label
+        className="formLabel form-label"
+      >
+        Email:
+      </label>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="email"
+        type="text"
+      />
+      <br />
+      <label
+        className="formLabel form-label"
+      >
+        Password:
+      </label>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="password"
+        type="password"
+      />
+      <br />
+    </div>
+    <br />
+    <button
+      className="accountButton"
+      onClick={[Function]}
+      type="login"
+      variant="primary"
+    >
+      Create Account
+    </button>
+  </form>
+  <br />
+  <p>
+    Already have an account? 
+    <a
+      href="/Login"
+    >
+      Login here.
+    </a>
+  </p>
+</div>
+`;

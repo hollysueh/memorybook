@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="App"
+>
+  <link
+    crossOrigin="anonymous"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    rel="stylesheet"
+  />
+  <div
+    className="headerStyle"
+  >
+    <header>
+      <div
+        id="headerNav"
+      >
+        <div
+          className="App"
+        >
+          <link
+            crossOrigin="anonymous"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            rel="stylesheet"
+          />
+          <nav
+            className="navbar navbar navbar-expand navbar-light"
+          >
+            <div
+              className="dropdown nav-item"
+              onKeyDown={[Function]}
+            >
+              <a
+                aria-expanded={false}
+                aria-haspopup={true}
+                className="dropdown-toggle nav-link"
+                href="#"
+                id="navDropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+              >
+                Menu
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div
+        id="headerImg"
+      >
+        <img
+          alt="logo"
+          onClick={[Function]}
+          src="memorybook_logo.png"
+          width={250}
+        />
+      </div>
+      <div
+        id="headerGreet"
+      >
+        <h4>
+          <div>
+            <a
+              className="headerLink"
+              href="/Login"
+              onClick={[Function]}
+            >
+              Login /
+            </a>
+            <a
+              className="headerLink"
+              href="/CreateAccount"
+              onClick={[Function]}
+            >
+               Create Account
+            </a>
+          </div>
+        </h4>
+      </div>
+    </header>
+  </div>
+  <div
+    className="App"
+  >
+    <h1
+      id="landingHeader"
+    >
+      Memory Book
+    </h1>
+    <p
+      className="landingSubHead"
+    >
+      A 100% free virtual photo album maker.
+    </p>
+    <p
+      className="landingSubHead"
+    >
+      <a
+        href="/CreateAccount"
+      >
+        Click here
+      </a>
+       to get started.
+    </p>
+  </div>
+</div>
+`;

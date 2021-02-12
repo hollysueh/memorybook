@@ -1,0 +1,41 @@
+{
+  "name": "memorybook-server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon server.js",
+    "server": "nodemon server.js",
+    "test": "mocha",
+    "frontend-install": "npm install --prefix memorybook-client",
+    "frontend": "npm start --prefix memorybook-client",
+    "dev": "concurrently \"npm run memorybook-server\" \"npm run memorybook-client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix memorybook-client && npm run build --prefix memorybook-client"
+  },
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "cloudinary": "1.24.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "8.2.0",
+    "express": "~4.16.1",
+    "helmet": "4.4.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "8.5.1",
+    "mongoose": "5.11.13",
+    "morgan": "~1.9.1",
+    "nodemailer": "6.4.17",
+    "nodemailer-smtp-transport": "2.7.4",
+    "request": "2.88.2",
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "mocha": "8.2.1",
+    "nodemon": "2.0.7"
+  },
+  "engines": {
+    "node": "14.15.1",
+    "npm": "6.14.8"
+  }
+}
