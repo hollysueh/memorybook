@@ -25,10 +25,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: ["'self'", "'unsafe-inline'", process.env.MONGODB_URL, process.env.CLOUDINARY_URL],
-      scriptSrc: ["'self'", "'unsafe-inline'",  process.env.MONGODB_URL, process.env.CLOUDINARY_URL],
-      imgSrc: ["self", "'unsafe-inline'", process.env.CLOUDINARY_URL],
-      objectSrc: ["'self'", "'unsafe-inline'", process.env.CLOUDINARY_URL],
+      defaultSrc: ["'self'", "'unsafe-inline'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["self", "'unsafe-inline'"],
+      objectSrc: ["'self'", "'unsafe-inline'"],
       upgradeInsecureRequests: [],
     },
   })
