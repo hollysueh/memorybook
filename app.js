@@ -21,7 +21,6 @@ app.use(express.urlencoded({ limit: '50mb', extended: true })) //To enable body 
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')));
 
-/*
 //HELMET - Security Middleware
 app.use(
   helmet.contentSecurityPolicy({
@@ -34,7 +33,6 @@ app.use(
     },
   })
 );
-*/
 
 // Require routing rules
 require('./routes/index.js')(app);
