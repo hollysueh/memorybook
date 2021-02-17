@@ -48,6 +48,7 @@ require('./routes/getImage.js')(app);
 require('./routes/saveImage.js')(app);
 require('./routes/deleteImage.js')(app);
 
+/* 
 //Catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -65,6 +66,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+*/ 
 
 //Connect to MongoDB Atlas database
 const mongoUri = process.env.MONGODB_URL;

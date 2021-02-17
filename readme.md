@@ -40,7 +40,7 @@ Repeat the above steps in the 'memorybook-client' folder.
 
 ## Usage
 ### Heroku
-Visit the following link to use the app online: ************************
+Visit the following link to use the app online: https://my-memory-book.herokuapp.com/
 
 ### Local PC
 Open a Terminal window (for Mac) or Command Prompt window (for Windows) in the 'memorybook-server' folder. In the window, type "npm start", which will start the app's server on port 8080.
