@@ -23,6 +23,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //HELMET - Security Middleware
 app.use(
+  helmet({
+      contentSecurityPolicy: false,
+  })
+);
+/*
+app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'", "'unsafe-inline'"],
@@ -33,6 +39,7 @@ app.use(
     },
   })
 );
+*/
 
 // Require routing rules
 require('./routes/index.js')(app);
