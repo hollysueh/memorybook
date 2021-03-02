@@ -21,8 +21,9 @@ class FAQs extends Component {
             <li>To add a new photo, click on the <i>'Upload Photo'</i> button on the page. From there you can upload photos from your local drive.</li>
             <li>To change a page header or a photo's description, click on the text and type in your text.</li>
             <li>Remember to save any changes by clicking the <i>'Save Page'</i> button at the bottom of the page.</li>
-            <li>To cancel your changes so far, click the 'Cancel Changes' button at the bottom of the page.</li>
+            <li>To cancel your changes so far, click the <i>'Cancel Changes'</i> button at the bottom of the page.</li>
           </ul>
+          <br></br>
           <h5 className="question">How do I delete a page from my photo album?</h5>
           <p>To delete a page from your photo album, click <i>'Delete Page'</i> at the bottom of the page you want to delete.</p>
           <br></br>

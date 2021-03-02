@@ -1,111 +1,109 @@
-/* Main App Styling   */
+/* Import Fonts - Google API */
+@import url(
+  'https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel:wght@500&family=Lato&display=swap');
+
+/* Main App Styling */
 .App {
+  padding: 10px;
   padding-bottom: 200px;
-  background-color: linen;
-  color: rgb(107, 99, 90);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 105%;
+  background-color: rgb(241, 241, 252);
+  color: rgb(116, 119, 131);
+  font-family: 'Lato', sans-serif;
   text-align: center;
 }
 .pageHeading {
   margin-top: 30px;
   margin-bottom: 40px;
+  font-family: 'Cinzel Decorative', cursive;
+  text-decoration-line: underline; 
+  text-decoration-thickness: 1.5px;
 }
 
 /* Header Page Styling */
 .headerStyle {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 10px;
-  background-color:rgb(141, 108, 108);
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(6px + 2vmin);
 }
-#headerNav {
-  margin-top: 20px;
-  margin-left: 5px;
-  display: inline;
-  float: left;
-}
-#headerImg {
-  display: inline;
-  float: center;
-}
-#headerGreet {
-  margin-top: 35px;
-  margin-right: 30px;
-  display: inline-flex;
-  float: right;
+.headerText{
+  color: rgb(116, 119, 131);
+  font-family: 'Lato', sans-serif;
 }
 .headerLink {
-  color: rgb(231, 203, 189);
-  text-decoration-color: white;
-  font-size: 90%;
+  font-size: 80%;
 }
-
-/* NavBar Styling */
-.navbar {
-  background-color:rgb(141, 108, 108);
-  border-bottom: 20px solid rgb(141, 108, 108);
-  position: absolute;
-}
-#navDropdown {
-  background-color:rgb(141, 108, 108);
-  color: rgb(231, 203, 189);
-  text-decoration-color: white;
-  text-align: left;
+.navDropdown {
+  width: 10em;
+  background-color: rgb(241, 241, 252);
 }
 .dropdownLink {
-  color: rgb(107, 99, 90);
-}
-#styleDropdown {
-  padding-bottom: 0px;
+  text-align: left;
+  border-bottom: 1px solid rgb(220, 223, 233);
+  font-size: 90%;
 }
 
 /* Landing (Home) Page Styling */
 #landingHeader {
   margin: 40px;
-  font-weight: 400;
-  text-decoration: underline;
-  font-size: 300%;
+  display: inline-block;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 500%;
+  text-decoration-line: underline; 
+  text-decoration-thickness: 3px;
 }
 .landingSubHead {
   font-size: 140%;
 }
 
 /* Photo Album Styling ('my Memory Book') */
-.pageNavBtn {
-  margin: 30px;
-  padding: 10px;
-  border: 1px solid darkgray;
-  border-radius: 5px;
-  background-color:rgb(141, 108, 108);
-  color: white;
-  font-size: 120%;
-}
+.flipBook {
+  margin-left: 5%;
+  margin-right: 5%;
+ }
+.arrows {
+  margin-top: 20px;
+ }
 #pagePrev {
+  margin-left: 80px;
   float: left;
 }
 #pageNext {
+  margin-right: 80px;
   float: right;
 }
-#pageAdd {
-  float: center;
-}
-.flipBook {
- margin-left: 5%;
- margin-right: 5%;
+#pageAddBtn {
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  background-color:rgb(154, 154, 187);;
+  color: white;
+  font-size: 120%;
 }
 
 /* Page Content Styling */
 .pageContent {
+  margin-top: 0px;
   padding-top: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 2.5em;
   border: 1px solid darkgray;
   border-radius: 20px;
-  box-shadow: inset 0 0 30px #000000;
+  display: block;
+  box-shadow: inset 0 0 25px #222224;
+  background-color: white;
+}
+.pageHeaderInput {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  width: 80%;
+  background-color: white;
+  font-family: 'Cinzel Decorative', cursive;
+  text-align: center;
+  display: block;
 }
 .pageTxtInput {
   margin-top: 30px;
@@ -114,14 +112,14 @@
   padding: 10px;
   border: 1px solid darkgray;
   border-radius: 5px;
-  background-color: linen;
-  color:  rgb(59, 55, 50);
+  width: 80%;
+  background-color: white;
   text-align: center;
   display: block;
 }
 .pageImgInput {
   margin: 5px;
-  color:  rgb(59, 55, 50);
+  color: black;
   text-align: center;
 }
 .img {
@@ -131,27 +129,19 @@
   display: block;
 }
 .insidePageBtn {
-  margin: 5px;
   padding: 5px;
   border: 1px solid rgb(163, 152, 140);
   border-radius: 5px;
-  background-color:darkgrey;
   color: white;
-  font-size: 90%;
+  font-size: 95%;
 }
 #savePg {
-  padding: 10px;
-  background-color:rgb(141, 108, 108);
-  font-size: 90%;
-}
-#cancelPg {
+  background-color: rgb(86, 124, 86);
   float: left;
 }
 #delPg {
+  background-color: rgb(163, 106, 106);
   float: right;
-}
-#pgNo {
-  float: center;
 }
 input[type='file'] {
   font-size: 70%;
@@ -163,8 +153,9 @@ input[type='file'] {
   text-align: left;
 }
 .question {
-  font-weight: 600;
-  text-decoration: underline;
+  margin-top: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 140%;
 }
 
 /* Login / Create Account / Contact Page Styling */
@@ -181,7 +172,7 @@ input[type='file'] {
   padding: 10px;
   border: 1px solid darkgray;
   border-radius: 5px;
-  background-color:rgb(141, 108, 108);
+  background-color:rgb(154, 154, 187);
   color: white;
   font-size: 120%;
 }

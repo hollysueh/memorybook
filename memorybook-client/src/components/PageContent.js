@@ -27,7 +27,6 @@ class PageContent extends Component {
     this.handleSavePage = this.handleSavePage.bind(this);
     this.uploadPageText = this.uploadPageText.bind(this);
     this.uploadImage = this.uploadImage.bind(this);
-    this.cancelChanges = this.cancelChanges.bind(this);
     this.deletePage = this.deletePage.bind(this);
     this.deleteImage = this.deleteImage.bind(this);
   }
@@ -184,11 +183,6 @@ class PageContent extends Component {
     }
   } 
 
-  //Cancel changes made to album by reloading window
-  cancelChanges() {
-    window.location.reload();
-  }
-
   // Delete Selected Page
   deletePage() {
     this.deleteImage(); //call function to delete page's image
@@ -237,32 +231,33 @@ class PageContent extends Component {
       );
     } else { //if page content loaded, display page header, image, photoDesc
       return (
-        <div>
-          <div className="pageContent">
-            <form onSubmit={this.handleSavePage}>
-              <fieldset disabled={disabled}>
-                <h3><input type="text" name="header" value={header} onChange={(e) => this.handleHeaderChange(e.target.value)} defaultValue="enter page header here..." className="pageTxtInput" /></h3>
-                <input type="file" name="image" value={fileInput} onChange={this.handleImageChange} className="pageImgInput"/>
-                {previewImage ? //If user has uploaded image from local PC, show previewed image
-                  <img src={previewSource} alt="previewImg" style={{height: "300px"}} className="img" /> 
-                  : //Else, show image from server
-                  <Image //for loading images from Cloudinary
-                    key={pageID}
-                    cloudName="hollysueh"
-                    publicID={imageID}
-                    height="300"
-                    crop="scale"
-                    className="img"
-                />}
-                <input type="text" name="photoDesc" value={photoDesc} onChange={(e) => this.handleTextChange(e.target.value)} defaultValue="enter photo description here..." className="pageTxtInput" />
-                <button className="insidePageBtn" id="savePg" type="submit">Save Page</button>
-              </fieldset>
-            </form>
-            <br></br>
-            <button disabled={disabled} className="insidePageBtn" id="cancelPg" onClick={this.cancelChanges}>Cancel Changes</button>
-            <button disabled={disabled} className="insidePageBtn" id="delPg" onClick={this.deletePage}>Delete Page</button>
-            <small id="pgNo">Page {pageNoDisplay}</small><br></br>
-          </div>
+        <div className="pageContent">
+          <form>
+            <fieldset disabled={disabled}>
+              <h3>
+                <input type="text" name="header" value={header} defaultValue="enter page header..."
+                  onChange={(e) => this.handleHeaderChange(e.target.value)} className="pageHeaderInput" />
+              </h3>
+              <input type="file" name="image" value={fileInput} onChange={this.handleImageChange} className="pageImgInput"/>
+              {previewImage ? //If user has uploaded image from local PC, show previewed image
+                <img src={previewSource} alt="previewImg" style={{height: "300px"}} className="img" /> 
+                : //Else, show image from server
+                <Image //for loading images from Cloudinary
+                  key={pageID}
+                  cloudName="hollysueh"
+                  publicID={imageID}
+                  height="300"
+                  crop="scale"
+                  className="img"
+              />}
+              <input type="text" name="photoDesc" value={photoDesc} defaultValue="enter photo description here..."
+                onChange={(e) => this.handleTextChange(e.target.value)} className="pageTxtInput" />
+            </fieldset>
+          </form>
+          <br></br>
+          <button className="insidePageBtn" disabled={disabled} id="savePg" onClick={this.handleSavePage}>Save Page</button>
+          <button className="insidePageBtn" disabled={disabled} id="delPg" onClick={this.deletePage}>Del Page</button>
+          <small>Page {pageNoDisplay}</small><br></br>
         </div>
       );
     }

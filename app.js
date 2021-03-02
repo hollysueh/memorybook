@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const helmet = require('helmet')
 const dotenv = require('dotenv').config();
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const logger = require('morgan');
@@ -25,16 +24,16 @@ app.use(
 );
 
 // Require routing rules
-app.use('/api', require('./routes/newUser.js'))
-app.use('/api', require('./routes/login.js'))
-app.use('/api', require('./routes/authorize.js'))
-app.use('/api', require('./routes/getAlbum.js'))
-app.use('/api', require('./routes/addPage.js'))
-app.use('/api', require('./routes/updatePage.js'))
-app.use('/api', require('./routes/deletePage.js'))
-app.use('/api', require('./routes/getImage.js'))
-app.use('/api', require('./routes/saveImage.js'))
-app.use('/api', require('./routes/deleteImage.js'))
+require('./routes/newUser.js')(app);
+require('./routes/login.js')(app);
+require('./routes/authorize.js')(app);
+require('./routes/getAlbum.js')(app);
+require('./routes/addPage.js')(app);
+require('./routes/updatePage.js')(app);
+require('./routes/deletePage.js')(app);
+require('./routes/getImage.js')(app);
+require('./routes/saveImage.js')(app);
+require('./routes/deleteImage.js')(app);
 
 //Connect to MongoDB Atlas database
 const mongoUri = process.env.MONGODB_URL;

@@ -7,6 +7,11 @@ import '../App.css';
 //Import Page Content component
 import PageContent from './PageContent';
 
+//Import icons
+import leftArrow from '../image/leftArrow.png';
+import rightArrow from '../image/rightArrow.png'
+
+
 //'My Memory Book' Page
 class PhotoAlbum extends Component {
   constructor(props) {
@@ -30,37 +35,44 @@ class PhotoAlbum extends Component {
   
   //Load User's Photo Album
   componentDidMount() {
+    console.log("paramsID: " + this.props.match.params.userID);
     const paramsID = this.props.match.params.userID; //get userID from URL params
-    fetch('/getAlbum', { //Send fetch request to server to get user's photo album
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      }, //Send server userID so they can fetch corresponding album pages
-      body: JSON.stringify({
-        userID: paramsID
-      }),
-    })
-    .then(res => res.json())
-    .then(
-      (result) => { 
-        if (result === "Error fetching") { //If there was an error fetching pages send err msg
-          console.log("Error fetching photo album");
-          return;
-        } else if (result === "No records") { //if there are no pages with matching userID
-          this.setState({
-            newUser: true //confirm user is a 'newUser'
-          })
-          this.authToken(); //call function to authorise user access
-        } else { //If successfully fetched pages
-          const pages = result.length; //Calculate how many album pages there are
-          this.setState({ 
-            numPages: pages, //Set 'numPages' as number of pages fetched
-            userID: paramsID //Set userID as URL params
-          });
-          this.authToken(); //call function to authorise user access
+    if (paramsID === 'no-user') { //if no userID
+      this.setState({
+        isLoaded: true
+      })
+    } else {
+      fetch('/getAlbum', { //Send fetch request to server to get user's photo album
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }, //Send server userID so they can fetch corresponding album pages
+        body: JSON.stringify({
+          userID: paramsID
+        }),
+      })
+      .then(res => res.json())
+      .then(
+        (result) => { 
+          if (result === "Error fetching") { //If there was an error fetching pages send err msg
+            console.log("Error fetching photo album");
+            return;
+          } else if (result === "No records") { //if there are no pages with matching userID
+            this.setState({
+              newUser: true //confirm user is a 'newUser'
+            })
+            this.authToken(); //call function to authorise user access
+          } else { //If successfully fetched pages
+            const pages = result.length; //Calculate how many album pages there are
+            this.setState({ 
+              numPages: pages, //Set 'numPages' as number of pages fetched
+              userID: paramsID //Set userID as URL params
+            });
+            this.authToken(); //call function to authorise user access
+          }
         }
-      }
-    );
+      );
+    }
   }
 
   //Authorise user's access
@@ -153,6 +165,7 @@ class PhotoAlbum extends Component {
           <div className="App">
             <br></br>
             <h5>Seems like you're not logged in! <a href="/Login">Login here </a>to view your memory book.</h5>
+            <br></br>
             <h6>If you don't have an account, <a href="/CreateAccount">create an account here.</a></h6>
           </div>
         );
@@ -161,26 +174,28 @@ class PhotoAlbum extends Component {
           return (
             <div>
               <h5>Get started by adding a page to your memory book!</h5>
-              <button onClick={this.addPage} disabled={buttonDisable}>Add Page</button>
+              <button onClick={this.addPage} disabled={buttonDisable} className="pageNavBtn" id="pageAddBtn">Add Page</button>
             </div>
           );
         }
         for (let i = 0; i < numPages; i++) { //For each 'numPages', create a new page 
           pages.push(
             <div>
-              <BrowserRouter>
-                <PageContent key={i} pageNo={i} addedPageID={addedPageID} admin={admin} username={username} userID={userID} />
+              <BrowserRouter className="test">
+                <PageContent key={i} pageNo={i} addedPageID={addedPageID} admin={admin} username={username} userID={userID} className="test" />              
               </BrowserRouter>
             </div>
           );
-        };
+        }; 
         return ( //Display photo album pages inside 'HTML Flip Book' with nav buttons below 
           <div className="App">
             <h1 className="pageHeading">{username}'s Memory Book</h1>
             <div className="flipBook">
               <HTMLFlipBook 
                 width={500}
-                height={500}
+                height={"auto"}
+                minWidth={300}
+                minHeight={600}
                 size="stretch"
                 drawShadow={true}
                 useMouseEvents={false} //disable page turn on click (so input form can be used)
@@ -190,9 +205,11 @@ class PhotoAlbum extends Component {
                 {pages}
               </HTMLFlipBook>
             </div>
-            <button className="pageNavBtn" id="pagePrev" onClick={this.prevButtonClick}>Previous page</button>
-            <button className="pageNavBtn"  id="pageNext" onClick={this.nextButtonClick}>Next page</button>
-            <button className="pageNavBtn" id="pageAddBtn" onClick={this.addPage} disabled={buttonDisable}>Add Page</button>
+            <div className="albumBtns">
+              <img src={leftArrow} width={80} className="arrows" id="pagePrev" onClick={this.prevButtonClick} alt="prev" />
+              <img src={rightArrow} width={80} className="arrows" id="pageNext" onClick={this.nextButtonClick} alt="next" />
+              <button id="pageAddBtn" onClick={this.addPage} disabled={buttonDisable}>Add Page</button>
+            </div>
           </div>
         );
       }
